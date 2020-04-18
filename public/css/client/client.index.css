@@ -1,0 +1,22 @@
+/* .client-index{ } */
+
+.table .badge{
+    width: 80px;
+    font-size: 10px;
+}
+
+.table .actions a, .table .actions button{
+    height: 25px;
+    font-size: 10px;
+    border-radius: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.tr-client-index-active{
+    background: #DDD !important;
+}
+.tr-client-index-pattern{
+    background: #FFF !important;
+}
