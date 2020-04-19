@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientRequest extends FormRequest
+class DoctorRequest extends FormRequest
 {
  
     public function authorize()
@@ -14,11 +14,7 @@ class ClientRequest extends FormRequest
 
     public function rules()
     {
-        return array(
-            // 'name' => 'required',
-            // 'email' => 'required',
-            // 'status'=> 'required',
-        );
+        return array();
     }
 
 }

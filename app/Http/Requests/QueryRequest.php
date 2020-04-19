@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminRequest extends FormRequest
+class QueryRequest extends FormRequest
 {
  
     public function authorize()
@@ -14,11 +14,7 @@ class AdminRequest extends FormRequest
 
     public function rules()
     {
-        return array(
-            // 'name' => 'required',
-            // 'email' => 'required',
-            // 'status'=> 'required',
-        );
+        return array();
     }
 
 }
