@@ -11,11 +11,10 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Sale
+ * Class Doctor
  * 
  * @property int $id
- * @property string $client_id
- * @property string $product_id
+ * @property string $name
  * @property string $value
  * @property string $status
  * @property Carbon $created_at
@@ -24,9 +23,9 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
 **/
 
-class Sale extends Model
+class Doctor extends Model
 {
-	protected $table = 'sale';
+	protected $table = 'product';
 
 	protected $dates = array(
 		'created_at',
@@ -34,10 +33,9 @@ class Sale extends Model
 	);
 
 	protected $fillable = array(
-		'client_id',
-		'product_id',
-		'value',
-		'status',
+		'name',
+        'value',
+        'status',
         'created_at',
         'updated_at'
 	);

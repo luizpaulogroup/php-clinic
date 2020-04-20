@@ -11,7 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Client
+ * Class Patient
  * 
  * @property int $id
  * @property string $name
@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
 **/
 
-class Client extends Model
+class Patient extends Model
 {
 	protected $table = 'client';
 

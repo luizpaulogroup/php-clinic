@@ -11,21 +11,22 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Admin
+ * Class Query
  * 
  * @property int $id
- * @property string $name
- * @property string $email
- * @property string $password
+ * @property string $client_id
+ * @property string $product_id
+ * @property string $value
+ * @property string $status
  * @property Carbon $created_at
  * @property Carbon $updated_at
  *
  * @package App\Models
 **/
 
-class Admin extends Model
+class Query extends Model
 {
-	protected $table = 'admin';
+	protected $table = 'sale';
 
 	protected $dates = array(
 		'created_at',
@@ -33,10 +34,10 @@ class Admin extends Model
 	);
 
 	protected $fillable = array(
-		'name',
-		'email',
+		'client_id',
+		'product_id',
+		'value',
 		'status',
-        'password',
         'created_at',
         'updated_at'
 	);
