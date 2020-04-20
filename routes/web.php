@@ -6,56 +6,66 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'AuthController@index');
 Route::get('/auth', 'AuthController@index');
 Route::post('/auth/init', 'AuthController@init');
+
 // Actions
 Route::get('/logout', 'ActionController@logout');
 
-// Admin
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/search', 'AdminController@search');
+// User
+Route::get('/user', 'UserController@index');
+Route::get('/user/search', 'UserController@search');
 
-Route::get('/admin/create', 'AdminController@create');
-Route::post('/admin/store', 'AdminController@store');
+Route::get('/user/create', 'UserController@create');
+Route::post('/user/store', 'UserController@store');
 
-Route::get('/admin/{id}', 'AdminController@admin');
-Route::patch('/admin/update/{id}', 'AdminController@update');
+Route::get('/user/{id}', 'UserController@details');
+Route::patch('/user/update/{id}', 'UserController@update');
 
-Route::delete('/admin/destroy/{id}', 'AdminController@destroy');
+Route::delete('/user/destroy/{id}', 'UserController@destroy');
 
-// Client
-Route::get('/client', 'ClientController@index');
-Route::get('/client/search', 'ClientController@search');
+// Patient
+Route::get('/patient', 'PatientController@index');
+Route::get('/patient/search', 'PatientController@search');
 
-Route::get('/client/create', 'ClientController@create');
-Route::post('/client/store', 'ClientController@store');
+Route::get('/patient/create', 'PatientController@create');
+Route::post('/patient/store', 'PatientController@store');
 
-Route::get('/client/{id}', 'ClientController@client');
-Route::patch('/client/update/{id}', 'ClientController@update');
+Route::get('/patient/{id}', 'PatientController@details');
+Route::patch('/patient/update/{id}', 'PatientController@update');
 
-Route::delete('/client/destroy/{id}', 'ClientController@destroy');
+Route::delete('/patient/destroy/{id}', 'PatientController@destroy');
 
-// Product
-Route::get('/product', 'ProductController@index');
-Route::get('/product/search', 'ProductController@search');
+// Doctor
+Route::get('/doctor', 'DoctorController@index');
+Route::get('/doctor/search', 'DoctorController@search');
 
-Route::get('/product/create', 'ProductController@create');
-Route::post('/product/store', 'ProductController@store');
+Route::get('/doctor/create', 'DoctorController@create');
+Route::post('/doctor/store', 'DoctorController@store');
 
-Route::get('/product/{id}', 'ProductController@product');
-Route::patch('/product/update/{id}', 'ProductController@update');
+Route::get('/doctor/{id}', 'DoctorController@details');
+Route::patch('/doctor/update/{id}', 'DoctorController@update');
 
-Route::delete('/product/destroy/{id}', 'ProductController@destroy');
+Route::delete('/doctor/destroy/{id}', 'DoctorController@destroy');
 
-// Sale
-Route::get('/sale', 'SaleController@index');
-Route::get('/sale/search', 'SaleController@search');
+// Specialty
+Route::get('/specialty', 'SpecialtyController@index');
+Route::get('/specialty/search', 'SpecialtyController@search');
 
-Route::get('/sale/create', 'SaleController@create');
-Route::post('/sale/store', 'SaleController@store');
+Route::get('/specialty/create', 'SpecialtyController@create');
+Route::post('/specialty/store', 'SpecialtyController@store');
 
-Route::get('/sale/{id}', 'SaleController@sale');
-Route::patch('/sale/update/{id}', 'SaleController@update');
+Route::get('/specialty/{id}', 'SpecialtyController@details');
+Route::patch('/specialty/update/{id}', 'SpecialtyController@update');
 
-Route::delete('/sale/destroy/{id}', 'SaleController@destroy');
+Route::delete('/specialty/destroy/{id}', 'SpecialtyController@destroy');
 
-// Theme
-Route::get('/theme', 'ThemeController@index');
+// Query
+Route::get('/query', 'QueryController@index');
+Route::get('/query/search', 'QueryController@search');
+
+Route::get('/query/create', 'QueryController@create');
+Route::post('/query/store', 'QueryController@store');
+
+Route::get('/query/{id}', 'QueryController@details');
+Route::patch('/query/update/{id}', 'QueryController@update');
+
+Route::delete('/query/destroy/{id}', 'QueryController@destroy');
