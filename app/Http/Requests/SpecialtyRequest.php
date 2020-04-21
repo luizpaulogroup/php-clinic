@@ -14,11 +14,7 @@ class ProductRequest extends FormRequest
 
     public function rules()
     {
-        return array(
-            // 'name' => 'required',
-            // 'email' => 'required',
-            // 'status'=> 'required',
-        );
+        return array();
     }
 
 }
