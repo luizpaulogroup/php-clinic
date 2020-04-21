@@ -42,13 +42,10 @@ class AuthController extends Controller
         $admin = $this->objUser
             ->where('email', $email)
             ->where('password', $password)
-            ->where('status', 'A')
             ->first();
 
         if(!$admin){
-            return view('auth.index', array(
-                'title' => $title,
-            ));
+            return view('auth.index', array('title' => $title));
         }
 
         $request->session()->put('user', array(
