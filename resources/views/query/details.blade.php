@@ -1,9 +1,9 @@
 @extends('templates.template')
 
 @section('content')
-<div class="container-fluid sale-sale">
+<div class="container-fluid query-details">
     <div>
-        <a href="{{url("sale")}}" type="button" class="btn font-weight-bold btn-pattern">Voltar</a>
+        <a href="{{url("query")}}" type="button" class="btn font-weight-bold btn-pattern">Voltar</a>
     </div>
     <span class="title-page">Editar</span>
 
@@ -15,26 +15,22 @@
         </div>
     @endif
 
-    <form method="post" action="{{url("sale/update/$sale->id")}}">
+    <form method="post" action="{{url("query/update/$query->id")}}">
         @method('PATCH')
         @csrf
         <div class="row">
             <div class="form-group col-md-6">
-                <label class="font-weight-bold text-uppercase">Cliente</label>
-                <input disabled type="text" class="form-control text-uppercase" value="{{$sale->client_name}}">
+                <label class="font-weight-bold text-uppercase">Paciente</label>
+                <input disabled type="text" class="form-control text-uppercase" value="{{$query->patient_name}}">
             </div>
             <div class="form-group col-md-6">
-                <label class="font-weight-bold text-uppercase">Produto</label>
-                <input disabled type="text" class="form-control text-uppercase" value="{{$sale->product_name}}">
-            </div>
-            <div class="form-group col-md-12">
-                <label class="font-weight-bold text-uppercase">Valor</label>
-                <input disabled type="text" class="form-control money" value="R$ {{$sale->value}}">
+                <label class="font-weight-bold text-uppercase">Doutor</label>
+                <input disabled type="text" class="form-control text-uppercase" value="{{$query->doctor_name}}">
             </div>
             <div class="form-group col-md-12">
                 <label class="font-weight-bold text-uppercase">Status</label>
                 <select name="status" class="form-control" required>
-                    @if($sale->status == 'A')
+                    @if($query->status == 'A')
                         <option value="A">ATIVO</option>
                         <option value="I">INATIVO</option>
                     @else

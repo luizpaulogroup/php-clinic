@@ -29,6 +29,11 @@
         <link rel="stylesheet" href="{{url('/css/doctor/doctor.index.css')}}">
         <link rel="stylesheet" href="{{url('/css/doctor/doctor.create.css')}}">
         
+        <!-- Specialty -->
+        <link rel="stylesheet" href="{{url('/css/specialty/specialty.details.css')}}">
+        <link rel="stylesheet" href="{{url('/css/specialty/specialty.index.css')}}">
+        <link rel="stylesheet" href="{{url('/css/specialty/specialty.create.css')}}">
+        
         <title>{{$title}}</title>
 
     </head>
@@ -61,9 +66,6 @@
                             <a class="dropdown-item" href="{{url("specialty/index")}}">ESPECIALIDADES</a>
                             <a class="dropdown-item" href="{{url("query/index")}}">CONSULTAS</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url("theme")}}">TEMA</a>
                     </li>
                 </ul>
                 <a class="btn btn-danger" href="{{url("logout")}}">SAIR</a>

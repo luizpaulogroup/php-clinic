@@ -33,13 +33,9 @@
                 <select name="doctor_id" class="form-control" required>
                     <option value="">SELECIONE...</option>
                     @foreach($doctors as $doctor)
-                        <option class="text-uppercase" value="{{$doctor->id}}">{{$doctor->name}} - R$ {{number_format($product->value, 2, ',', '.')}}</option>
+                        <option class="text-uppercase" value="{{$doctor->id}}">{{$doctor->name}}</option>
                     @endforeach
                 </select>
-            </div>
-            <div class="form-group col-md-12">
-                <label class="font-weight-bold text-uppercase">Doutor</label>
-                <input type="datetime-local" name="date" class="form-control">
             </div>
             <div class="form-group col-md-12">
                 <label class="font-weight-bold text-uppercase">Status</label>

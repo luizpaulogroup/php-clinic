@@ -18,6 +18,7 @@ class Query extends Model
 	protected $fillable = array(
 		'patient_id',
 		'doctor_id',
+		'status',
         'created_at',
         'updated_at'
 	);

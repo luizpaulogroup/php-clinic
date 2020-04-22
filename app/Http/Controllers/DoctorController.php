@@ -136,12 +136,9 @@ class DoctorController extends Controller
 
     public function destroy($id)
     {
-        $del = $this->objDoctor->destroy($id);
+        $this->objDoctor->destroy($id);
 
-        return response()->json(array(
-            'fail' => $del ? false : true,
-            'url' => url('doctor')
-        ));
+        return redirect('doctor');
     }
 
     public function logout()

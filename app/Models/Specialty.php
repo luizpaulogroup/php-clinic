@@ -16,6 +16,7 @@ class Specialty extends Model
 	);
 
 	protected $fillable = array(
+        'name',
         'created_at',
         'updated_at'
 	);

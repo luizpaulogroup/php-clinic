@@ -100,7 +100,7 @@ class SpecialtyController extends Controller
             return redirect('specialty');
         }
 
-        return view('specialty.specialty', array(
+        return view('specialty.details', array(
             'title' => $title,
             'specialty' => $specialty,
         ));            
@@ -111,12 +111,10 @@ class SpecialtyController extends Controller
        
         $request->validate([
             'name' => 'required|min:3|max:255',
-            'status' => 'required',
         ]);
 
         $this->objSpecialty->where(array('id' => $id))->update(array(
             'name' => $request->name,
-            'status' => $request->status,
         ));
 
         return redirect('specialty');
@@ -124,12 +122,9 @@ class SpecialtyController extends Controller
 
     public function destroy($id)
     {
-        $del = $this->objSpecialty->destroy($id);
+        $this->objSpecialty->destroy($id);
 
-        return response()->json(array(
-            'fail' => $del ? false : true,
-            'url' => url('specialty')
-        ));
+        return redirect('specialty');
     }
 
 }

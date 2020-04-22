@@ -23,9 +23,9 @@
                 <tr class="text-uppercase">
                     <th>#</th>
                     <th>status</th>
-                    <th>nome</th>
-                    <th>valor</th>
-                    <th class="text-center">ações</th>
+                    <th>paciente</th>
+                    <th>doutor</th>
+                    <th class="text-right">ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,10 +39,11 @@
                                 <span class="badge badge-danger">INATIVO</span>
                             @endif
                         </td>
-                        <td class="text-uppercase">{{$query->name}}</td>
-                        <td>{{number_format($query->value, 2, ',', '.')}}</td>
-                        <td class="text-center actions">
+                        <td class="text-uppercase">{{$query->patient_name}}</td>
+                        <td class="text-uppercase">{{$query->doctor_name}}</td>
+                        <td class="text-right actions">
                             <a href="{{url("query/$query->id")}}" class="btn btn-success btn-sm font-weight-bold text-uppercase">Editar</a>
+                            <a href="{{url("query/destroy/$query->id")}}" class="btn btn-danger btn-sm font-weight-bold text-uppercase">Apagar</a>
                         </td>
                     </tr>
                 @endforeach

@@ -98,16 +98,9 @@ class QueryController extends Controller
             'status' => 'required',
         ]);
 
-        $product = $this->objDoctor->where('id', $request->doctor_id)->first();
-
-        if(!$product){
-            return redirect('query/create');
-        }
-
         $this->objQuery->create([
             'patient_id' => $request->patient_id,
             'doctor_id' => $request->doctor_id,
-            'value' => $product->value,
             'status' => $request->status,             
         ]);
 
@@ -135,7 +128,7 @@ class QueryController extends Controller
             return redirect('query');
         }
 
-        return view('query.query', array(
+        return view('query.details', array(
             'title' => $title,
             'query' => $query,
         ));            
@@ -157,12 +150,9 @@ class QueryController extends Controller
 
     public function destroy($id)
     {
-        $del = $this->objQuery->destroy($id);
-
-        return response()->json(array(
-            'fail' => $del ? false : true,
-            'url' => url('query')
-        ));
+        $this->objQuery->destroy($id);
+        
+        return redirect('query');
     }
 
     protected function money($value)
