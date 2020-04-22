@@ -1,9 +1,9 @@
 @extends('templates.template')
 
 @section('content')
-<div class="container-fluid product-create">
+<div class="container-fluid doctor-create">
     <div>
-        <a href="{{url("product")}}" type="button" class="btn font-weight-bold btn-pattern">Listar</a>
+        <a href="{{url("doctor")}}" type="button" class="btn font-weight-bold btn-pattern">Listar</a>
     </div>
     <span class="title-page">Cadastro</span>
     
@@ -15,7 +15,7 @@
         </div>
     @endif
 
-    <form method="post" action="{{url("product/store")}}">
+    <form method="post" action="{{url("doctor/store")}}">
         @method('POST')
         @csrf
         <div class="row">
@@ -24,15 +24,16 @@
                 <input autocomplete="off" type="text" name="name" class="form-control" required minlength="3">
             </div>
             <div class="form-group col-md-12">
-                <label class="font-weight-bold text-uppercase">Valor</label>
-                <input autocomplete="off" type="text" name="value" class="form-control money" required>
+                <label class="font-weight-bold text-uppercase">E-mail</label>
+                <input autocomplete="off" type="email" name="email" class="form-control" required>
             </div>
             <div class="form-group col-md-12">
-                <label class="font-weight-bold text-uppercase">Status</label>
-                <select name="status" class="form-control" required>
-                    <option value="">SELECIONE...</option>
-                    <option value="A">ATIVO</option>
-                    <option value="I">INATIVO</option>
+                <label class="font-weight-bold text-uppercase">Especialidade</label>
+                <select name="specialty_id" class="form-control">
+                    <option value="">Selecione...</option>
+                    @foreach($specialtys as $specialty)
+                        <option class="text-uppercase" value="{{$specialty->id}}">{{$specialty->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group col-md-12">

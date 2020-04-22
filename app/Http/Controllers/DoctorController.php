@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DoctorRequest;
 
 use App\Models\Doctor;
+use App\Models\Specialty;
 
 class DoctorController extends Controller
 {
@@ -14,6 +15,7 @@ class DoctorController extends Controller
     public function __construct(){
         
         $this->objDoctor = new Doctor();
+        $this->objSpecialty = new Specialty();
 
     }
 
@@ -64,9 +66,11 @@ class DoctorController extends Controller
         }
 
         $title = "Doutor - CADASTRO";
+        $specialtys = $this->objSpecialty->get();
 
         return view('doctor.create', array(
             'title' => $title,
+            'specialtys' => $specialtys,
         ));
     }
 
@@ -75,14 +79,14 @@ class DoctorController extends Controller
 
         $request->validate([
             'name' => 'required|min:3|max:255',
-            'email' => 'required|email|unique:client',
-            'status' => 'required',
+            'email' => 'required|email|unique:doctor',
+            'specialty_id' => 'required',
         ]);
 
         $this->objDoctor->create([
             'name' => $request->name,
             'email' => $request->email,
-            'status' => $request->status,             
+            'specialty_id' => $request->specialty_id,             
         ]);
 
         return redirect('doctor');
@@ -99,14 +103,16 @@ class DoctorController extends Controller
         $title = "Doutor - DETALHES";
 
         $doctor = $this->objDoctor->find($id);
+        $specialtys = $this->objSpecialty->get();
 
         if(!$doctor) {
             return redirect('doctor');
         }
 
-        return view('doctor.doctor', array(
+        return view('doctor.details', array(
             'title' => $title,
             'doctor' => $doctor,
+            'specialtys' => $specialtys,
         ));            
     }
 
@@ -116,13 +122,13 @@ class DoctorController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'status' => 'required',
+            'specialty_id' => 'required',
         ]);
 
         $this->objDoctor->where(array('id' => $id))->update(array(
             'name' => $request->name,
             'email' => $request->email,
-            'status' => $request->status,
+            'specialty_id' => $request->specialty_id,
         ));
 
         return redirect('doctor');

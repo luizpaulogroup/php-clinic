@@ -16,6 +16,9 @@ class Doctor extends Model
 	);
 
 	protected $fillable = array(
+		'name',
+        'email',
+		'specialty_id',
         'created_at',
         'updated_at'
 	);

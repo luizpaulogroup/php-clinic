@@ -75,12 +75,10 @@ class SpecialtyController extends Controller
 
         $request->validate([
             'name' => 'required|min:3|max:255',
-            'status' => 'required',
         ]);
 
         $this->objSpecialty->create([
             'name' => $request->name,
-            'status' => $request->status,             
         ]);
 
         return redirect('specialty');
