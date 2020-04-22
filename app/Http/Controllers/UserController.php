@@ -75,21 +75,19 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required|min:3|max:255',
-            'email' => 'required|email|unique:client',
-            'status' => 'required',
+            'email' => 'required|email|unique:user',
         ]);
 
         $this->objUser->create([
             'name' => $request->name,
-            'email' => $request->email,
-            'status' => $request->status,             
+            'email' => $request->email,  
         ]);
 
         return redirect('user');
 
     }
 
-    public function client($id)
+    public function details($id)
     {
         
         if(!session()->has('user')){
@@ -98,15 +96,15 @@ class UserController extends Controller
 
         $title = "Usuário - DETALHES";
 
-        $client = $this->objUser->find($id);
+        $user = $this->objUser->find($id);
 
-        if(!$client) {
+        if(!$user) {
             return redirect('user');
         }
 
-        return view('user.client', array(
+        return view('user.details', array(
             'title' => $title,
-            'client' => $client,
+            'user' => $user,
         ));            
     }
 
@@ -116,13 +114,11 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'status' => 'required',
         ]);
 
         $this->objUser->where(array('id' => $id))->update(array(
             'name' => $request->name,
             'email' => $request->email,
-            'status' => $request->status,
         ));
 
         return redirect('user');
@@ -130,12 +126,9 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $del = $this->objUser->destroy($id);
+        $this->objUser->destroy($id);
 
-        return response()->json(array(
-            'fail' => $del ? false : true,
-            'url' => url('user')
-        ));
+        return redirect('user');
     }
 
     public function logout()

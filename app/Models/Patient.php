@@ -16,6 +16,8 @@ class Patient extends Model
 	);
 
 	protected $fillable = array(
+		'name',
+        'email',
         'created_at',
         'updated_at'
 	);

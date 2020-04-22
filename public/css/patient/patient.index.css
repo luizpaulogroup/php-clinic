@@ -1,4 +1,4 @@
-/* .client-index{ } */
+/* .patient-index{ } */
 
 .table .badge{
     width: 80px;
@@ -14,9 +14,9 @@
     justify-content: center;
 }
 
-.tr-client-index-active{
+.tr-patient-index-active{
     background: #DDD !important;
 }
-.tr-client-index-pattern{
+.tr-patient-index-pattern{
     background: #FFF !important;
 }

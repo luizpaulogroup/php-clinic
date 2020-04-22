@@ -45,19 +45,21 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CADASTRAR</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url("admin/create")}}">ADMINISTRADOR</a>
-                            <a class="dropdown-item" href="{{url("client/create")}}">CLIENTE</a>
-                            <a class="dropdown-item" href="{{url("product/create")}}">PRODUTO</a>
-                            <a class="dropdown-item" href="{{url("sale/create")}}">VENDA</a>
+                            <a class="dropdown-item" href="{{url("user/create")}}">USUÁRIO</a>
+                            <a class="dropdown-item" href="{{url("patient/create")}}">PACIENTE</a>
+                            <a class="dropdown-item" href="{{url("doctor/create")}}">DOUTOR</a>
+                            <a class="dropdown-item" href="{{url("specialty/create")}}">ESPECIALIDADE</a>
+                            <a class="dropdown-item" href="{{url("query/create")}}">CONSULTA</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">LISTAR</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url("admin")}}">ADMINISTRADOR</a>
-                            <a class="dropdown-item" href="{{url("client")}}">CLIENTE</a>
-                            <a class="dropdown-item" href="{{url("product")}}">PRODUTO</a>
-                            <a class="dropdown-item" href="{{url("sale")}}">VENDA</a>
+                            <a class="dropdown-item" href="{{url("user/index")}}">USUÁRIOS</a>
+                            <a class="dropdown-item" href="{{url("patient/index")}}">PACIENTES</a>
+                            <a class="dropdown-item" href="{{url("doctor/index")}}">DOUTORES</a>
+                            <a class="dropdown-item" href="{{url("specialty/index")}}">ESPECIALIDADES</a>
+                            <a class="dropdown-item" href="{{url("query/index")}}">CONSULTAS</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -74,15 +76,15 @@
 
         @yield('content')
         
-        <script src="{{url('/jquery/jquery.js')}}"></script>
-        <script src="{{url('/bootstrap/bootstrap.js')}}"></script>
-        <script src="{{url('/jquery.confirm/jquery.confirm.js')}}"></script>
-        <script src="{{url('/jquery.mask/dist/jquery.mask.js')}}"></script>
+        <script src="{{url('jquery/jquery.js')}}"></script>
+        <script src="{{url('bootstrap/bootstrap.js')}}"></script>
+        <script src="{{url('jquery.confirm/jquery.confirm.js')}}"></script>
+        <script src="{{url('jquery.mask/dist/jquery.mask.js')}}"></script>
         <script src="{{url('js/ajax.set.up.js')}}"></script>
-        <script src="{{url('js/user.ajax.js')}}"></script>
-        <script src="{{url('js/query.ajax.js')}}"></script>
-        <script src="{{url('js/patient.ajax.js')}}"></script>
-        <script src="{{url('js/doctor.ajax.js')}}"></script>
+        <script src="{{url('js/user.js')}}"></script>
+        <script src="{{url('js/query.js')}}"></script>
+        <script src="{{url('js/patient.js')}}"></script>
+        <script src="{{url('js/doctor.js')}}"></script>
         
     </body>
 </html>

@@ -76,15 +76,11 @@ class PatientController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:patient',
-            'password' => 'required|min:6',
-            'status' => 'required',
         ]);
 
         $this->objPatient->create([
             'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-            'status' => $request->status,             
+            'email' => $request->email,            
         ]);
 
         return redirect('patient');
@@ -106,7 +102,7 @@ class PatientController extends Controller
             return redirect('patient');
         }
 
-        return view('patient.patient', array(
+        return view('patient.details', array(
             'title' => $title,
             'patient' => $patient,
         ));            
@@ -118,15 +114,11 @@ class PatientController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'password' => 'required|min:6',
-            'status' => 'required',
         ]);
 
         $this->objPatient->where(array('id' => $id))->update(array(
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
-            'status' => $request->status,
         ));
 
         return redirect('patient');
@@ -134,12 +126,9 @@ class PatientController extends Controller
 
     public function destroy($id)
     {
-        $del = $this->objPatient->destroy($id);
+        $this->objPatient->destroy($id);
 
-        return response()->json(array(
-            'fail' => $del ? false : true,
-            'url' => url('patient')
-        ));
+        return redirect('patient');
     }
 
 }

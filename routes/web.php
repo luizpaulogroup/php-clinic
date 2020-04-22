@@ -20,7 +20,7 @@ Route::post('/user/store', 'UserController@store');
 Route::get('/user/{id}', 'UserController@details');
 Route::patch('/user/update/{id}', 'UserController@update');
 
-Route::delete('/user/destroy/{id}', 'UserController@destroy');
+Route::get('/user/destroy/{id}', 'UserController@destroy');
 
 // Patient
 Route::get('/patient', 'PatientController@index');
@@ -32,7 +32,7 @@ Route::post('/patient/store', 'PatientController@store');
 Route::get('/patient/{id}', 'PatientController@details');
 Route::patch('/patient/update/{id}', 'PatientController@update');
 
-Route::delete('/patient/destroy/{id}', 'PatientController@destroy');
+Route::get('/patient/destroy/{id}', 'PatientController@destroy');
 
 // Doctor
 Route::get('/doctor', 'DoctorController@index');
@@ -44,7 +44,7 @@ Route::post('/doctor/store', 'DoctorController@store');
 Route::get('/doctor/{id}', 'DoctorController@details');
 Route::patch('/doctor/update/{id}', 'DoctorController@update');
 
-Route::delete('/doctor/destroy/{id}', 'DoctorController@destroy');
+Route::get('/doctor/destroy/{id}', 'DoctorController@destroy');
 
 // Specialty
 Route::get('/specialty', 'SpecialtyController@index');
@@ -56,7 +56,7 @@ Route::post('/specialty/store', 'SpecialtyController@store');
 Route::get('/specialty/{id}', 'SpecialtyController@details');
 Route::patch('/specialty/update/{id}', 'SpecialtyController@update');
 
-Route::delete('/specialty/destroy/{id}', 'SpecialtyController@destroy');
+Route::get('/specialty/destroy/{id}', 'SpecialtyController@destroy');
 
 // Query
 Route::get('/query', 'QueryController@index');
@@ -68,4 +68,4 @@ Route::post('/query/store', 'QueryController@store');
 Route::get('/query/{id}', 'QueryController@details');
 Route::patch('/query/update/{id}', 'QueryController@update');
 
-Route::delete('/query/destroy/{id}', 'QueryController@destroy');
+Route::get('/query/destroy/{id}', 'QueryController@destroy');

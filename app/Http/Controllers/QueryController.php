@@ -78,14 +78,14 @@ class QueryController extends Controller
 
         $title = "Consulta - CADASTRO";
 
-        $querys = $this->objPatient->where('status', 'A')->get();
+        $patients = $this->objPatient->get();
         
-        $products = $this->objDoctor->where('status', 'A')->get();
+        $doctors = $this->objDoctor->get();
 
         return view('query.create', array(
             'title' => $title,
-            'querys' => $querys,
-            'products' => $products,
+            'patients' => $patients,
+            'doctors' => $doctors,
         ));
     }
 
