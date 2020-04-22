@@ -9,28 +9,25 @@
         <link rel="stylesheet" href="{{url('/bootstrap/bootstrap.css')}}">
         <link rel="stylesheet" href="{{url('/css/styles.global.css')}}">
         
-        <!-- Admin -->
-        <link rel="stylesheet" href="{{url('/css/admin/admin.admin.css')}}">
-        <link rel="stylesheet" href="{{url('/css/admin/admin.index.css')}}">
-        <link rel="stylesheet" href="{{url('/css/admin/admin.create.css')}}">
+        <!-- User -->
+        <link rel="stylesheet" href="{{url('/css/user/user.details.css')}}">
+        <link rel="stylesheet" href="{{url('/css/user/user.index.css')}}">
+        <link rel="stylesheet" href="{{url('/css/user/user.create.css')}}">
 
-        <!-- Client -->
-        <link rel="stylesheet" href="{{url('/css/client/client.client.css')}}">
-        <link rel="stylesheet" href="{{url('/css/client/client.index.css')}}">
-        <link rel="stylesheet" href="{{url('/css/client/client.create.css')}}">
+        <!-- Query -->
+        <link rel="stylesheet" href="{{url('/css/query/query.details.css')}}">
+        <link rel="stylesheet" href="{{url('/css/query/query.index.css')}}">
+        <link rel="stylesheet" href="{{url('/css/query/query.create.css')}}">
         
-        <!-- Product -->
-        <link rel="stylesheet" href="{{url('/css/product/product.product.css')}}">
-        <link rel="stylesheet" href="{{url('/css/product/product.index.css')}}">
-        <link rel="stylesheet" href="{{url('/css/product/product.create.css')}}">
+        <!-- Patient -->
+        <link rel="stylesheet" href="{{url('/css/patient/patient.details.css')}}">
+        <link rel="stylesheet" href="{{url('/css/patient/patient.index.css')}}">
+        <link rel="stylesheet" href="{{url('/css/patient/patient.create.css')}}">
         
-        <!-- Sale -->
-        <link rel="stylesheet" href="{{url('/css/sale/sale.sale.css')}}">
-        <link rel="stylesheet" href="{{url('/css/sale/sale.index.css')}}">
-        <link rel="stylesheet" href="{{url('/css/sale/sale.create.css')}}">
-        
-        <!-- Theme -->
-        <link rel="stylesheet" href="{{url('/css/theme/theme.index.css')}}">
+        <!-- Doctor -->
+        <link rel="stylesheet" href="{{url('/css/doctor/doctor.details.css')}}">
+        <link rel="stylesheet" href="{{url('/css/doctor/doctor.index.css')}}">
+        <link rel="stylesheet" href="{{url('/css/doctor/doctor.create.css')}}">
         
         <title>{{$title}}</title>
 
@@ -82,10 +79,10 @@
         <script src="{{url('/jquery.confirm/jquery.confirm.js')}}"></script>
         <script src="{{url('/jquery.mask/dist/jquery.mask.js')}}"></script>
         <script src="{{url('js/ajax.set.up.js')}}"></script>
-        <script src="{{url('js/admin.ajax.js')}}"></script>
-        <script src="{{url('js/client.ajax.js')}}"></script>
-        <script src="{{url('js/product.ajax.js')}}"></script>
-        <script src="{{url('js/sale.ajax.js')}}"></script>
+        <script src="{{url('js/user.ajax.js')}}"></script>
+        <script src="{{url('js/query.ajax.js')}}"></script>
+        <script src="{{url('js/patient.ajax.js')}}"></script>
+        <script src="{{url('js/doctor.ajax.js')}}"></script>
         
     </body>
 </html>
